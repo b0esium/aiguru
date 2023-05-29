@@ -22,6 +22,14 @@ code {
   margin-bottom: 24px;
 }
 
+.master-image {
+  cursor: pointer;
+}
+
+.selected {
+  border: 2px solid rgb(91, 25, 136);
+}
+
 .master-name {
   font-size: medium;
   text-align: center;

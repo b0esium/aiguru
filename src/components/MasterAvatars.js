@@ -9,12 +9,12 @@ import HermesTrismegistusImage from "../assets/HermesTrismegistus.jpg";
 import RumiImage from "../assets/Rûmî.jpg";
 import AlanWattsImage from "../assets/AlanWatts.jpg";
 
-function MasterAvatars() {
+function MasterAvatars({ handleClick }) {
   const mastersList = [
     "Buddha",
     "Jesus",
     "Plato",
-    "Marcus Aurelius",
+    "Stoics",
     "Lao-Tzu",
     "Hermes Tri.",
     "Rûmî",
@@ -42,7 +42,8 @@ function MasterAvatars() {
             <Col key={index} className="col-6 col-xl-3">
               <div className="card master-card">
                 <img
-                  className="img-fluid"
+                  onClick={handleClick}
+                  className="master-image"
                   src={mastersImages[index]}
                   alt={master}
                 />

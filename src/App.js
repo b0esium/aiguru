@@ -9,20 +9,34 @@ import Answer from "./answer";
 
 const App = () => {
   const [texts, setTexts] = useState([]);
+  const [selected, setSelected] = useState([]);
 
-  // promises for async calls
+  function handleClick(e) {
+    const selectedMaster = e.target;
+    const selectedMasterName = selectedMaster.alt;
+    const selectedMasterParent = selectedMaster.parentElement;
 
+    if (!selected.includes(selectedMasterName)) {
+      setSelected([...selected, selectedMasterName]);
+      selectedMasterParent.classList.add("selected");
+    } else {
+      setSelected(selected.filter((master) => master !== selectedMasterName));
+      selectedMasterParent.classList.remove("selected");
+    }
+
+    console.log(selected);
+  }
+
+  // promise for async calls
   function getAnswer(question) {
     return new Promise((resolve) => {
       Answer(question, resolve);
     });
   }
 
-  // async calls to APIs
-
   let answer = undefined;
 
-  // get openAI answer & d-id animation ID
+  // get openAI answer
   async function ask(question) {
     try {
       // openAI
@@ -48,10 +62,8 @@ const App = () => {
 
   return (
     <Container fluid className="page">
-      <MasterAvatars></MasterAvatars>
-
+      <MasterAvatars handleClick={handleClick}></MasterAvatars>
       <Dialog texts={texts}></Dialog>
-
       <Input handleSubmit={handleSubmit}></Input>
     </Container>
   );
