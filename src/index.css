@@ -14,7 +14,7 @@ code {
 
 .page { height: 100vh; }
 
-.choose {
+.page-title {
   padding: 40px 0;
 }
 
@@ -31,7 +31,6 @@ code {
 }
 
 .master-name {
-  font-size: medium;
   text-align: center;
 }
 
@@ -46,7 +45,7 @@ code {
   color: darkolivegreen;
 }
 
-.dialog-container { height: 60vh; overflow-y: scroll; padding-top: 4vh; }
+.dialog-container { height: 90vh; overflow-y: scroll; padding-top: 4vh; }
 
 .dialog { flex-direction: column; padding: 0 24px; }
 

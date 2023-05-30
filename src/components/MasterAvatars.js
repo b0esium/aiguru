@@ -14,9 +14,9 @@ function MasterAvatars({ handleClick }) {
     "Buddha",
     "Jesus",
     "Plato",
-    "Stoics",
+    "Marcus Aurelius",
     "Lao-Tzu",
-    "Hermes Tri.",
+    "Hermes Trismegistus",
     "Rûmî",
     "Alan Watts",
   ];
@@ -36,10 +36,10 @@ function MasterAvatars({ handleClick }) {
     <Row>
       <Col className="col-1 col-xl-3"></Col>
       <Col className="align-items-center col-10 col-xl-6">
-        <h1 className="choose">Choose your spiritual master(s)</h1>
+        <h1 className="page-title">Choose your spiritual master(s)</h1>
         <Row>
           {mastersList.map((master, index) => (
-            <Col key={index} className="col-6 col-xl-3">
+            <Col key={index} className="col-3 col-xl-2">
               <div className="card master-card">
                 <img
                   onClick={handleClick}
@@ -48,7 +48,7 @@ function MasterAvatars({ handleClick }) {
                   alt={master}
                 />
                 <div className="card-body">
-                  <p className="card-title master-name">{master}</p>
+                  <p className="card-text master-name">{master}</p>
                 </div>
               </div>
             </Col>

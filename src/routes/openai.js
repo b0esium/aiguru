@@ -20,12 +20,13 @@ router.get("/text", cache("60 minutes"), async (req, res) => {
       },
     };
     const body = {
-      model: "gpt-3.5-turbo",
+      model: "gpt-4",
       messages: [{ role: "user", content: prompt }],
-      max_tokens: 200,
+      max_tokens: 500,
       temperature: 0,
     };
     const apiRes = await needle("post", `${OPENAIAPI_TEXT_URL}`, body, options);
+    console.log("request to openai api");
     const data = apiRes.body;
     // log the request to the public API
     if (process.env.NODE_ENV !== "production") {

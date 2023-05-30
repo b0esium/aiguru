@@ -23,8 +23,12 @@ const App = () => {
       setSelected(selected.filter((master) => master !== selectedMasterName));
       selectedMasterParent.classList.remove("selected");
     }
+  }
 
-    console.log(selected);
+  function buildQuestion(q) {
+    let mastersList = selected.toString();
+    let question = `I want you to act as a great spiritual master from now on, a combination of ${mastersList}. You will provide the same wisdom, knowledge and guidance that is found in their teachings and writings. When I ask you a question you will reply as if you are this spiritual master, comparing and contrasting the points of view of ${mastersList}. I am a layperson with a lot to learn. I will ask you questions to improve my understanding of God, reality, the world and myself. Fully immerse yourself into the role of this spiritual master. Keep up the act of being this spiritual master as well as you can. Do not break character. Let’s begin: At this time you (this spiritual master) are teaching under a tree. I came to you, and exchanged greetings with you. When the greetings and polite conversation were over, I sat down to one side and asked you my first question: ${q}`;
+    return question;
   }
 
   // promise for async calls
@@ -46,16 +50,25 @@ const App = () => {
     }
   }
 
-  async function main(question) {
+  async function main(q, question, spinner) {
     await ask(question);
-    setTexts([...texts, [question, answer]]);
+    spinner.remove();
+    setTexts([...texts, [q, answer]]);
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const question = e.target.text.value;
-    main(question);
+    // loading...
+    const loader = document.getElementById("loader");
+    const spinner = document.createElement("div");
+    spinner.classList.add("spinner-border", "loader");
+    spinner.style.margin = "auto";
+    loader.appendChild(spinner);
+
+    const q = e.target.text.value;
+    const question = buildQuestion(q);
+    main(q, question, spinner);
 
     e.target.text.value = "";
   };
