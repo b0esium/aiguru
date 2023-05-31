@@ -22,7 +22,7 @@ router.get("/text", cache("60 minutes"), async (req, res) => {
     const body = {
       model: "gpt-3.5-turbo",
       messages: [{ role: "user", content: prompt }],
-      max_tokens: 500,
+      max_tokens: 600,
       temperature: 0,
     };
     // log the request to the public API

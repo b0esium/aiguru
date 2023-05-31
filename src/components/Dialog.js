@@ -20,7 +20,7 @@ function Dialog({ texts }) {
     <Row className="dialog-container">
       <Col className="col-1 col-xl-3"></Col>
       <Col className="d-flex align-items-center col-10 col-xl-6 dialog">
-        <div ref={dialogRef}>
+        <div ref={dialogRef} className="dialog-list">
           {texts.map((text, index) => {
             return (
               <div key={index} className="q-a">
@@ -36,7 +36,7 @@ function Dialog({ texts }) {
             );
           })}
         </div>
-        <div id="loader" className="d-flex justify-content-center"></div>
+        <div id="loader" className="d-flex justify-content-center loader"></div>
       </Col>
     </Row>
   );

@@ -9,7 +9,7 @@ function Input({ handleSubmit }) {
             <Form.Group className="d-flex px-5">
               <Form.Control
                 type="text"
-                placeholder="Enter your message"
+                placeholder="Enter your question"
                 className="mr-2"
                 name="text"
                 autoFocus

@@ -19,13 +19,13 @@ code {
 }
 
 .page-title {
-  padding: 40px 0;
+  padding: 20px 0;
   color: #747474;
 }
 
 .master-card {
   width: 10vh;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 
 .master-image {
@@ -44,13 +44,18 @@ code {
 
 .loader {
   color: #198754;
+  padding-bottom: 256px;
 }
 
-.dialog-container { padding-top: 4vh 0 12vh; }
+.dialog-container { padding: 4vh 0 12vh; }
 
 .dialog { flex-direction: column; }
 
-.q-a { margin-bottom: 32px; }
+.dialog-list {
+  padding-bottom: 128px;
+}
+
+.q-a { margin-bottom: 40px; }
 
 .question { color: grey; margin-bottom: 6px }
 

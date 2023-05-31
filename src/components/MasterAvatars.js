@@ -5,9 +5,13 @@ import JesusImage from "../assets/Jesus.jpg";
 import PlatoImage from "../assets/Plato.jpg";
 import MarcusAureliusImage from "../assets/MarcusAurelius.jpg";
 import LaoTzuImage from "../assets/LaoTzu.jpg";
+import ShankaraImage from "../assets/Shankara.jpg";
 import HermesTrismegistusImage from "../assets/HermesTrismegistus.jpg";
+import NagarjunaImage from "../assets/Nagarjuna.jpg";
 import RumiImage from "../assets/Rûmî.jpg";
+import RamDassImage from "../assets/RamDass.jpg";
 import AlanWattsImage from "../assets/AlanWatts.jpg";
+import TerenceMcKennaImage from "../assets/TerenceMcKenna.jpg";
 
 function MasterAvatars({ handleClick }) {
   const mastersList = [
@@ -16,9 +20,13 @@ function MasterAvatars({ handleClick }) {
     "Plato",
     "Marcus Aurelius",
     "Lao-Tzu",
+    "Shankara",
     "Hermes Trismegistus",
+    "Nagarjuna",
     "Rûmî",
+    "Ram Dass",
     "Alan Watts",
+    "Terence McKenna",
   ];
 
   const mastersImages = [
@@ -27,19 +35,23 @@ function MasterAvatars({ handleClick }) {
     PlatoImage,
     MarcusAureliusImage,
     LaoTzuImage,
+    ShankaraImage,
     HermesTrismegistusImage,
+    NagarjunaImage,
     RumiImage,
+    RamDassImage,
     AlanWattsImage,
+    TerenceMcKennaImage,
   ];
 
   return (
-    <Row>
+    <Row className="header">
       <Col className="col-1 col-xl-3"></Col>
       <Col className="align-items-center col-10 col-xl-6">
-        <h1 className="page-title">Choose your spiritual master(s):</h1>
-        <Row className="header">
+        <h5 className="page-title">Choose your spiritual master(s):</h5>
+        <Row>
           {mastersList.map((master, index) => (
-            <Col key={index} className="col-3 col-xl-3">
+            <Col key={index} className="col-4 col-xl-3">
               <div className="card master-card">
                 <img
                   onClick={handleClick}
