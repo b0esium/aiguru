@@ -1,5 +1,6 @@
 {
-  "name": "hypatia",
+  "name": "aiguru",
+  "description": "AI Guru enables you to ask questions and have conversations with some of the greatest spiritual masters of the past.",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
