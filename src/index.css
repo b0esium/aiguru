@@ -14,42 +14,43 @@ code {
 
 .page { height: 100vh; }
 
+.header {
+  background-color: floralwhite;
+}
+
 .page-title {
   padding: 40px 0;
+  color: #747474;
 }
 
 .master-card {
+  width: 10vh;
   margin-bottom: 24px;
 }
 
 .master-image {
   cursor: pointer;
-}
-
-.selected {
-  border: 2px solid rgb(91, 25, 136);
+  border-radius: 4px;
 }
 
 .master-name {
+  font-size: 0.65em;
   text-align: center;
 }
 
-.hypatia-row { height: 30vh; }
-
-.hypatia {
-  width: 26vh;
-  border-radius: 6px;
+.selected {
+  border: 2px solid #198754;
 }
 
 .loader {
-  color: darkolivegreen;
+  color: #198754;
 }
 
-.dialog-container { height: 90vh; overflow-y: scroll; padding-top: 4vh; }
+.dialog-container { padding-top: 4vh 0 12vh; }
 
-.dialog { flex-direction: column; padding: 0 24px; }
+.dialog { flex-direction: column; }
 
-.q-a { margin-bottom: 30px; }
+.q-a { margin-bottom: 32px; }
 
 .question { color: grey; margin-bottom: 6px }
 

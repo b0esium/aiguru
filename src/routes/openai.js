@@ -20,18 +20,17 @@ router.get("/text", cache("60 minutes"), async (req, res) => {
       },
     };
     const body = {
-      model: "gpt-4",
+      model: "gpt-3.5-turbo",
       messages: [{ role: "user", content: prompt }],
       max_tokens: 500,
       temperature: 0,
     };
-    const apiRes = await needle("post", `${OPENAIAPI_TEXT_URL}`, body, options);
-    console.log("request to openai api");
-    const data = apiRes.body;
     // log the request to the public API
     if (process.env.NODE_ENV !== "production") {
       console.log(`OPENAI REQUEST: ${OPENAIAPI_TEXT_URL}, ${body}, ${options}`);
     }
+    const apiRes = await needle("post", `${OPENAIAPI_TEXT_URL}`, body, options);
+    const data = apiRes.body;
     res.status(200).setHeader("Access-Control-Allow-Origin", "*").json(data);
   } catch (error) {
     res.status(500).json({ error });
