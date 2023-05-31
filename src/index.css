@@ -16,6 +16,7 @@ code {
 
 .header {
   background-color: floralwhite;
+  padding-top: 2vh;
 }
 
 .page-title {
@@ -26,10 +27,10 @@ code {
 .master-card {
   width: 10vh;
   margin-bottom: 12px;
+  cursor: pointer;
 }
 
 .master-image {
-  cursor: pointer;
   border-radius: 4px;
 }
 
@@ -40,6 +41,24 @@ code {
 
 .selected {
   border: 2px solid #198754;
+}
+
+.instructions {
+  text-align: center;
+  color: #747474;
+  padding-top: 4vh;
+}
+
+.ask {
+  padding-top: 4vh;
+}
+
+a:link {
+  color: #198754;
+}
+
+a:hover, a:visited {
+  color: #105837;
 }
 
 .loader {

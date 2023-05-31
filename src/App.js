@@ -12,7 +12,7 @@ const App = () => {
   const [selected, setSelected] = useState([]);
 
   function handleClick(e) {
-    const selectedMaster = e.target;
+    const selectedMaster = e.target.closest(".master-card").children[0]; // Get the img element
     const selectedMasterName = selectedMaster.alt;
     const selectedMasterParent = selectedMaster.parentElement;
 
@@ -59,6 +59,9 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const instructions = document.getElementById("instructions");
+    instructions.remove();
+
     // loading...
     const loader = document.getElementById("loader");
     const spinner = document.createElement("div");
@@ -81,6 +84,18 @@ const App = () => {
   return (
     <Container fluid className="page">
       <MasterAvatars handleClick={handleClick}></MasterAvatars>
+      <div id="instructions" className="instructions">
+        <h3>Choose one or several masters</h3>
+        <h5>(You can change each time)</h5>
+        <h3 className="ask">Then ask your first question!</h3>
+        <h5>(And follow-ups to engage in conversation)</h5>
+        <h6 className="ask">
+          Made by{" "}
+          <a href="http://twitter.com/b0esium" target="_blank" rel="noreferrer">
+            b0esium
+          </a>
+        </h6>
+      </div>
       <Dialog texts={texts}></Dialog>
       <Input handleSubmit={handleSubmit}></Input>
     </Container>

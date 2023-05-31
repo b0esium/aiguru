@@ -48,13 +48,11 @@ function MasterAvatars({ handleClick }) {
     <Row className="header">
       <Col className="col-1 col-xl-3"></Col>
       <Col className="align-items-center col-10 col-xl-6">
-        <h5 className="page-title">Choose your spiritual master(s):</h5>
         <Row>
           {mastersList.map((master, index) => (
             <Col key={index} className="col-4 col-xl-3">
-              <div className="card master-card">
+              <div className="card master-card" onClick={handleClick}>
                 <img
-                  onClick={handleClick}
                   className="master-image"
                   src={mastersImages[index]}
                   alt={master}
